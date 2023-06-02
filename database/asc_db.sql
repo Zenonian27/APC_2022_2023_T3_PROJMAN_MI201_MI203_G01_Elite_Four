@@ -35,7 +35,7 @@ CREATE TABLE `admins` (
   `password` varchar(100) NOT NULL,
   `phone_number` varchar(11) NOT NULL,
   `verification` varchar(255) NOT NULL,
-  `account_created` date NOT NULL DEFAULT current_timestamp()
+  `account_created` date NOT NULL DEFAULT CURDATE()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -55,7 +55,7 @@ CREATE TABLE `car_models` (
   `car_model_id` int(11) NOT NULL,
   `car_model` varchar(100) NOT NULL,
   `status` varchar(32) NOT NULL DEFAULT 'AVAILABLE',
-  `date_uploaded` date NOT NULL DEFAULT current_timestamp()
+  `date_uploaded` date NOT NULL DEFAULT CURDATE()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -89,7 +89,7 @@ CREATE TABLE `customers` (
   `password` varchar(100) NOT NULL,
   `phone_number` varchar(11) NOT NULL,
   `verification` varchar(255) NOT NULL,
-  `account_created` date NOT NULL DEFAULT current_timestamp()
+  `account_created` date NOT NULL DEFAULT CURDATE()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -113,7 +113,7 @@ CREATE TABLE `faqs` (
   `faq_title` varchar(100) NOT NULL,
   `faq_description` text NOT NULL,
   `status` varchar(32) NOT NULL DEFAULT 'SHOW',
-  `date_uploaded` date NOT NULL DEFAULT current_timestamp()
+  `date_uploaded` date NOT NULL DEFAULT CURDATE()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -143,7 +143,7 @@ CREATE TABLE `gallery` (
   `gallery_picture` varchar(100) NOT NULL,
   `gallery_picture_name` varchar(100) NOT NULL,
   `status` varchar(32) NOT NULL DEFAULT 'SHOW',
-  `date_uploaded` date NOT NULL DEFAULT current_timestamp()
+  `date_uploaded` date NOT NULL DEFAULT CURDATE()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -169,7 +169,7 @@ CREATE TABLE `promos` (
   `promo_poster` varchar(100) NOT NULL,
   `promo_name` varchar(100) NOT NULL,
   `status` varchar(32) NOT NULL DEFAULT 'SHOW',
-  `date_uploaded` date NOT NULL DEFAULT current_timestamp()
+  `date_uploaded` date NOT NULL DEFAULT CURDATE()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -198,7 +198,7 @@ CREATE TABLE `reservations` (
   `schedule` datetime NOT NULL,
   `customer_number` varchar(11) NOT NULL,
   `status` varchar(32) NOT NULL DEFAULT 'PENDING',
-  `date_placed` date NOT NULL DEFAULT current_timestamp(),
+  `date_placed` date NOT NULL DEFAULT CURDATE(),
   `date_updated` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -269,7 +269,7 @@ CREATE TABLE `reviews` (
   `customer_name` varchar(100) NOT NULL,
   `rating` varchar(1) NOT NULL,
   `description` text NOT NULL,
-  `date_posted` datetime NOT NULL DEFAULT current_timestamp()
+  `date_posted` datetime NOT NULL DEFAULT CURDATE()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -299,7 +299,7 @@ CREATE TABLE `services` (
   `service_name` varchar(100) NOT NULL,
   `service_description` text NOT NULL,
   `status` varchar(32) DEFAULT 'AVAILABLE',
-  `date_uploaded` date NOT NULL DEFAULT current_timestamp()
+  `date_uploaded` date NOT NULL DEFAULT CURDATE()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -331,7 +331,7 @@ CREATE TABLE `support_reply` (
   `complete_name` varchar(100) NOT NULL,
   `profile_picture` varchar(100) NOT NULL,
   `thread_response` text NOT NULL,
-  `date_posted` datetime NOT NULL DEFAULT current_timestamp()
+  `date_posted` datetime NOT NULL DEFAULT CURDATE()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -368,7 +368,7 @@ CREATE TABLE `support_tab` (
   `complete_name` varchar(100) NOT NULL,
   `thread_title` varchar(100) NOT NULL,
   `thread_description` text NOT NULL,
-  `date_posted` datetime NOT NULL DEFAULT current_timestamp()
+  `date_posted` datetime NOT NULL DEFAULT CURDATE()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -392,7 +392,7 @@ INSERT INTO `support_tab` (`support_id`, `customer_id`, `profile_picture`, `comp
 
 CREATE TABLE `website_visits` (
   `cookie_id` bigint(11) NOT NULL,
-  `visit_time` date NOT NULL DEFAULT current_timestamp()
+  `visit_time` date NOT NULL DEFAULT CURDATE()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
